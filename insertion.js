@@ -1,10 +1,9 @@
 let numbers = [7,9,3,1,2,6,4,0,8,5];
+let numbersWithDupes = [8,4,4,1,2,9,6,2];
 const insertionSort = (arr) => {
   let sortedList = [arr.pop()];
-  let loopDuration = arr.length; // else as we mutate arr and the length value changes, we stop prematurely.
-  for(let i = 0; i < loopDuration; i++){
+  for(let i = 0; arr.length > 0; i++){
     let newValue = arr.pop();
-    console.log(newValue);
     for(let j = 0; j < sortedList.length; j++){
       if(sortedList[j] < newValue){
         if(j+1 >= sortedList.length){
@@ -21,3 +20,4 @@ const insertionSort = (arr) => {
   return sortedList;
 };
 console.log(insertionSort(numbers));
+console.log(insertionSort(numbersWithDupes));
